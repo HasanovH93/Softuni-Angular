@@ -1,0 +1,7 @@
+Game:{{game.title}}
+<span [class.game-price]="shouldPriceBePurple" *ngIf="game.price >= 30">
+    Price: {{game.price}}
+</span>
+<span>
+    <img [attr.src]="game.image" alt="" width="100px" height="100px">
+</span>

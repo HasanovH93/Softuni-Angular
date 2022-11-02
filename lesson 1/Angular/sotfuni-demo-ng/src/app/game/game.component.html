@@ -1,0 +1,25 @@
+<input type="text" [(ngModel)]="searchText" placeholder="Search for game">
+
+Searched value: {{searchText}}
+
+<ul #gamesContainer>
+    <li *ngFor="let game of games">
+      <su-game-item *ngIf="shouldShowItemComponent">
+        
+      </su-game-item>
+    </li>
+</ul>
+
+<div>
+
+    <p>Total games: {{gamesContainer.children.length}}</p>
+</div>
+
+
+<button (click)="handleCreateOrDestroy()">
+  {{shouldShowItemComponent ? "Destroy Game Item": "Create Game Item"}}
+</button>
+
+<button (click)="handleExpandContentClick(gamesContainer)">
+  {{shouldPriceBePurple ? "Make Price Dark": "Make Price Purple"}}
+</button>
