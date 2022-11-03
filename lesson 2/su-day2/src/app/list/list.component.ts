@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICustomEvent } from '../list-item/list-item.component';
 
 @Component({
   selector: 'app-list',
@@ -6,12 +7,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  myProp = 'Hello World!';
 
-  constructor() {
-    setTimeout(() => {
-      this.myProp = 'Hello OtherWorld!';
-    }, 1000);
+  users = [
+    {
+      firstName: 'Ivan',
+      lastName: 'Ivanov',
+    },
+    {
+      firstName: 'Hasan',
+      lastName: 'Hasanov',
+    },
+  ];
+
+  selectedUserIndex: null | number = null;
+
+  showLastName = true;
+
+
+
+  constructor() {}
+
+  handleClickEvent(event: MouseEvent){
+    console.log(event)
+   this.showLastName = !this.showLastName;
+  }
+
+  showSelectedIndex(): boolean {
+    return (this.selectedUserIndex === null ?  -1 : this.selectedUserIndex)  >= 0
+  }
+
+  listItemClickHandler(index : number){
+    if(this.selectedUserIndex == index){
+      this.selectedUserIndex = null;
+      return;
+    }
+    this.selectedUserIndex = index
+  }
+
+  customEventHandler($event : ICustomEvent) {
+    console.log($event)
   }
 
   ngOnInit(): void {}
