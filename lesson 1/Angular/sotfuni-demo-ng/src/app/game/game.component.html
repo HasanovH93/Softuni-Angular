@@ -4,7 +4,7 @@ Searched value: {{searchText}}
 
 <ul #gamesContainer>
     <li *ngFor="let game of games">
-      <su-game-item *ngIf="shouldShowItemComponent">
+      <su-game-item [game]="game">
         
       </su-game-item>
     </li>

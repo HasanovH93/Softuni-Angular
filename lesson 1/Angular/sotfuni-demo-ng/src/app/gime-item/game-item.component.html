@@ -1,5 +1,5 @@
 Game:{{game.title}}
-<span [class.game-price]="shouldPriceBePurple" *ngIf="game.price >= 30">
+<span [class.game-price]="'red'" *ngIf="game.price >= 30">
     Price: {{game.price}}
 </span>
 <span>
