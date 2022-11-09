@@ -1,9 +1,12 @@
 import { NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserService } from './user.service';
 
 const myProvider : Provider = {
   useClass: class {
@@ -17,14 +20,17 @@ const myProvider : Provider = {
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    UserListComponent
+    // TestComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
-   myProvider
+    UserService,
+  //  myProvider
   ],
   bootstrap: [AppComponent]
 })

@@ -18,9 +18,9 @@ export class AppComponent {
 
   ]
   constructor(
-    @Inject('test') test: string
+    // @Inject('test') test: string
   ){
-    console.log(test)
+    // console.log(test)
     // setInterval(()  => {
     //   this.counter++
     // }, 3000)

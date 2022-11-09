@@ -43,7 +43,7 @@ Promise.resolve(1)
 
 const o = new Observable(ob => {
     ob.next(100);
-    ob.next(200;
+    ob.next(200);
     ob.next(300);
     ob.complete()
 });
