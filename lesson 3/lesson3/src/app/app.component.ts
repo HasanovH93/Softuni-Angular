@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +17,10 @@ export class AppComponent {
     }
 
   ]
-  constructor(){
+  constructor(
+    @Inject('test') test: string
+  ){
+    console.log(test)
     // setInterval(()  => {
     //   this.counter++
     // }, 3000)
