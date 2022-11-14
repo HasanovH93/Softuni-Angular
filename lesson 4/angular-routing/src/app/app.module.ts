@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
+import { PostListComponent } from './post/post-list/post-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,8 @@ import { UserModule } from './user/user.module';
     SharedModule,
     CoreModule,
     HttpClientModule,
-    UserModule
+    UserModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
