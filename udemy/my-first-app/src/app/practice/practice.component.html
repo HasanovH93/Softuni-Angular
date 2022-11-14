@@ -1,0 +1,30 @@
+<hr>
+<h2>Data Binding</h2>
+<label for="">Enter username:</label>
+<input type="text" class="form-control" [(ngModel)]="username">
+
+<p>{{username}}</p>
+
+<button class="btn btn-danger" [disabled]="username === ''" (click)="onReset()">Reset Username</button>
+
+
+<hr>
+<hr>
+
+<h2>Directives</h2>
+<!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button> -->
+<button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
+<p *ngIf="showSecret">Secret Password = tuna</p>
+<div 
+*ngFor="let log of logs; let i = index "
+[ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+[ngClass]="{'white-text': i >= 4}"
+>{{ log }}</div>
+
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
