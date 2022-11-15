@@ -9,11 +9,13 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { PostListComponent } from './post/post-list/post-list.component';
+import { StandAloneComponent } from './stand-alone/stand-alone.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent
+    PostListComponent,
+    StandAloneComponent
   ],
   imports: [
     BrowserModule,
