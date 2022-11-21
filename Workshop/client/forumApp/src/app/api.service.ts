@@ -18,6 +18,10 @@ export class ApiService {
     return this.httpClient.get<ITheme[]>(`${apiURL}/themes`)
     
   }
+
+  loadThemeById(id: number ){
+    return this.httpClient.get<ITheme>(`${apiURL}/themes/${id}`)
+  }
   
 
   loadPosts(limit?: number){
