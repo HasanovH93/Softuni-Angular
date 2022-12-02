@@ -14,8 +14,8 @@ import { ThemeModule } from './theme/theme.module';
     AppComponent,
   ],
   imports: [
-    AuthModule,
     ThemeModule,
+    AuthModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

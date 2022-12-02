@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
@@ -8,13 +9,17 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent   {
-
+  @ViewChild(NgForm, {static: true}) form!: ElementRef<HTMLInputElement>
   constructor(private router: Router, private authService: AuthService , private activatedRoute: ActivatedRoute) { 
    
   }
 
   
-  loginHandler() {
+  loginHandler(form: NgForm): void {
+    console.log(form)
+    if(form.invalid){
+      return
+    }
    this.authService.user = {
     firstName : 'John',
     lastName: 'Doe'
