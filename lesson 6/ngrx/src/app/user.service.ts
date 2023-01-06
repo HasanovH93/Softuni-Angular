@@ -8,7 +8,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  loadUsers(){
-    return this.http.get('https://jsonplaceholder.typicode.com/users')
+  loadUsers(filter?: string){
+    const query = filter ? `?email_like=${filter}` : ''
+    return this.http.get('https://jsonplaceholder.typicode.com/users' + query)
   }
 }

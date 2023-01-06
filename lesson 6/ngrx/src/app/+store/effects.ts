@@ -10,7 +10,7 @@ import { catchError, map, switchMap } from 'rxjs';
 export class Effects {
   loadUsers = createEffect(() =>this.actions$.pipe(
       ofType(loadUsers),
-      switchMap(() => this.userService.loadUsers().pipe(
+      switchMap(({filter}) => this.userService.loadUsers(filter).pipe(
             map((users) => loadUsersSuccess({ users })),
             catchError(errors => [loadUsersFailure({errors})])
             ))

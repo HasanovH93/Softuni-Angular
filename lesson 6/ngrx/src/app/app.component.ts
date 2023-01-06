@@ -32,14 +32,16 @@ export class AppComponent implements OnInit {
       )
   )
   constructor(private store: Store, private actions$: Actions) {
-    this.store.dispatch(loadUsers());
+    this.store.dispatch(loadUsers({filter: ''}));
   }
   ngOnInit(): void {
     fromEvent(this.emailFilter.nativeElement, 'input')
     .pipe(debounceTime(500),
      map(e => (e.target as HTMLInputElement).value)
     )
-    .subscribe(console.log)
+    .subscribe((filter) => {
+      this.store.dispatch(loadUsers({filter}))
+    })
   }
 
   incrementHandler() {
@@ -51,6 +53,6 @@ export class AppComponent implements OnInit {
   }
 
   reloadHandler(): void{
-    this.store.dispatch(loadUsers())
+    this.store.dispatch(loadUsers({filter: this.emailFilter.nativeElement.value || ''}))
   }
 }
