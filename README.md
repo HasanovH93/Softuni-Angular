@@ -2,6 +2,7 @@
 
 Intro to Angular and TypeScript
 
+
 • HTTP Basics;
 • Routing Overview;
 • Angular Overview;
